@@ -85,4 +85,4 @@ neurosoft-rdv/                # Nom du projet
 ── README.md                 # Documentation du projet
 
 
-LIEN LOGOS NEURO-SANTE : https://www.figma.com/make/5j0jWbZdSahZeRbauwzbKM/Greeting-Message?fullscreen
+LIEN LOGOS NEURO-SANTE : https://www.figma.com/make/5j0jWbZdSahZeRbauwzbKM/Greeting-Message?node-id=0-1&p=f&t=j6KHke8BuhdxKwZe-0&fullscreen=1
