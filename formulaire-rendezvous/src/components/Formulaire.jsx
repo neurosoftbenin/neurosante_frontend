@@ -2,78 +2,74 @@ import React, { useState } from 'react';
 import '../styles/Formulaire.css';
 
 function Formulaire() {
-  const [formData, setFormData] = useState({
-    nom: '',
-    prenom: '',
-    age: '',
-    email: '',
-    telephone: '',
-    clinique: '',
-    rendezVous: '',
-    details: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const [nom, setNom] = useState('');
+  const [prenom, setPrenom] = useState('');
+  const [age, setAge] = useState('');
+  const [numero, setNumero] = useState('');
+  const [mail, setMail] = useState('');
+  const [confirmation, setConfirmation] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Demande de rendez-vous Neurosanté :', formData);
-    alert('✅ Rendez-vous enregistré avec succès !');
+    setConfirmation(`Rendez-vous enregistré pour ${prenom} ${nom}, ${age} ans. 📞 ${numero} ✉️ ${mail}`);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="formulaire">
-      <h1 className="titre">🧠 Prise de rendez-vous - Neurosanté</h1>
+    <>
+      <header className="header-neurosante">
+        <h1> Neuro-Santé</h1>
+        <p>Plateforme de rendez-vous médicaux spécialisée</p>
+      </header>
 
-      <label>Nom :
-        <input type="text" name="nom" value={formData.nom} onChange={handleChange} required />
-      </label>
+      <div className="formulaire-container">
+        <h2>🧬 ENREGRISTREMENT PATIENT</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label htmlFor="nom">
+              <svg className="icon" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg>
+              Nom :
+            </label>
+            <input type="text" id="nom" value={nom} onChange={(e) => setNom(e.target.value)} required />
+          </div>
 
-      <label>Prénom :
-        <input type="text" name="prenom" value={formData.prenom} onChange={handleChange} required />
-      </label>
+          <div className="input-group">
+            <label htmlFor="prenom">
+              <svg className="icon" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg>
+              Prénom :
+            </label>
+            <input type="text" id="prenom" value={prenom} onChange={(e) => setPrenom(e.target.value)} required />
+          </div>
 
-      <label>Âge :
-        <input type="number" name="age" value={formData.age} onChange={handleChange} required />
-      </label>
+          <div className="input-group">
+            <label htmlFor="age">
+              <svg className="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Âge :
+            </label>
+            <input type="number" id="age" value={age} onChange={(e) => setAge(e.target.value)} required />
+          </div>
 
-      <label>Email :
-        <input type="email" name="email" value={formData.email} onChange={handleChange} />
-      </label>
+          <div className="input-group">
+            <label htmlFor="numero">
+              <svg className="icon" viewBox="0 0 24 24"><path d="M6.6 10.8c1.1 2.2 2.9 4 5.1 5.1l1.7-1.7c.2-.2.5-.3.8-.2 1 .3 2 .5 3.1.5.4 0 .7.3.7.7v3.1c0 .4-.3.7-.7.7C9.4 19.9 4.1 14.6 4.1 8.7c0-.4.3-.7.7-.7h3.1c.4 0 .7.3.7.7 0 1.1.2 2.1.5 3.1.1.3 0 .6-.2.8l-1.7 1.7z"/></svg>
+              Téléphone :
+            </label>
+            <input type="tel" id="numero" value={numero} onChange={(e) => setNumero(e.target.value)} required />
+          </div>
 
-      <label>Téléphone :
-        <input type="tel" name="telephone" value={formData.telephone} onChange={handleChange} />
-      </label>
+          <div className="input-group">
+            <label htmlFor="mail">
+              <svg className="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Email :
+            </label>
+            <input type="email" id="mail" value={mail} onChange={(e) => setMail(e.target.value)} required />
+          </div>
 
-      <label>Choix de la clinique :
-        <select name="clinique" value={formData.clinique} onChange={handleChange} required>
-          <option value="">-- Sélectionner une clinique --</option>
-          <option value="Clinique Centrale">Clinique Centrale</option>
-          <option value="Clinique Sainte-Marie">Clinique Sainte-Marie</option>
-          <option value="Clinique du Cœur">Clinique du Cœur</option>
-          <option value="Centre NeuroSanté Lokossa">Centre NeuroSanté Lokossa</option>
-        </select>
-      </label>
+          <button type="submit">Valider</button>
+        </form>
 
-      <label>Date du rendez-vous :
-        <input type="date" name="rendezVous" value={formData.rendezVous} onChange={handleChange} required />
-      </label>
-
-      <label>Détails du rendez-vous :
-        <textarea
-          name="details"
-          value={formData.details}
-          onChange={handleChange}
-          placeholder="Motif de la consultation, symptômes, préférences horaires..."
-          rows="4"
-        />
-      </label>
-
-      <button type="submit">📅 Réserver le rendez-vous</button>
-    </form>
+        {confirmation && <div className="confirmation">{confirmation}</div>}
+      </div>
+    </>
   );
 }
 
