@@ -1,0 +1,21 @@
+.accueil {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #f9fcff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.2);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.accueil h1 {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.accueil p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
