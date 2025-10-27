@@ -7,6 +7,7 @@ function Formulaire() {
   const [age, setAge] = useState('');
   const [numero, setNumero] = useState('');
   const [mail, setMail] = useState('');
+  const [motDePasse, setMotDePasse] = useState('');
   const [confirmation, setConfirmation] = useState('');
 
   const handleSubmit = (e) => {
@@ -22,7 +23,7 @@ function Formulaire() {
       </header>
 
       <div className="formulaire-container">
-        <h2>🧬 ENREGRISTREMENT PATIENT</h2>
+        <h2>🧬 ENREGISTREMENT PATIENT</h2>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label htmlFor="nom">
@@ -62,6 +63,21 @@ function Formulaire() {
               Email :
             </label>
             <input type="email" id="mail" value={mail} onChange={(e) => setMail(e.target.value)} required />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="motDePasse">
+              <svg className="icon" viewBox="0 0 24 24"><path d="M12 17a2 2 0 100-4 2 2 0 000 4zm6-7V7a6 6 0 00-12 0v3H4v10h16V10h-2zm-8-3a4 4 0 018 0v3H10V7z"/></svg>
+              Mot de passe :
+            </label>
+            <input
+              type="password"
+              id="motDePasse"
+              value={motDePasse}
+              onChange={(e) => setMotDePasse(e.target.value)}
+              placeholder="*******"
+              required
+            />
           </div>
 
           <button type="submit">Valider</button>

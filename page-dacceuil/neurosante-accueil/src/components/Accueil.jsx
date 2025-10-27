@@ -3,22 +3,38 @@ import '../styles/Accueil.css';
 
 function Accueil() {
   return (
-    <div className="accueil">
-      <h1>🧠 Bienvenue sur Neurosanté</h1>
-      <p>
-        Assez de galères. Assez de files d’attente. Assez de rendez-vous impossibles.
+    <div className="accueil-wrapper">
+      <header className="header-neurosante">
+        <div className="branding">
+          <h1> Neuro-Santé</h1>
+          <p>Plateforme médicale intelligente pour cliniques et patients</p>
+        </div>
+      </header>
 
-Neurosanté explose les barrières de la prise de rendez-vous médicale. Fini les appels interminables, les secrétariats débordés, les cliniques inaccessibles.
+      <main className="presentation">
+        <section className="intro">
+          <h2>Bienvenue sur Neuro-Santé</h2>
+          <p>
+            Neuro-Santé est une solution digitale conçue pour moderniser la gestion des soins médicaux.
+            Elle permet aux cliniques de gérer efficacement leurs rendez-vous, d’enregistrer les patients
+            en toute sécurité, et de centraliser les informations médicales dans un environnement fiable
+            et confidentiel. Les patients bénéficient d’un accès simplifié à leurs données et à leurs
+            professionnels de santé.
+          </p>
+        </section>
 
-Tu choisis ta clinique. Tu choisis ta spécialité. Tu choisis ta date. Point final.
+        <section className="actions">
+          <h3>Accéder à votre espace</h3>
+          <div className="buttons">
+            <button onClick={() => window.location.href = '/connexion-patient'}>Espace Patient</button>
+            <button onClick={() => window.location.href = '/connexion-clinique'}>Espace Clinique</button>
+          </div>
+        </section>
+      </main>
 
-En quelques clics, ton rendez-vous est réservé. Sans stress. Sans détour. Sans foutaises.
-
-Neurosanté, c’est l’arme fatale contre les tracas médicaux. Simple. Rapide. Brutalement efficace.
-      </p>
-      <p>
-        Notre objectif : vous offrir un accès rapide, simple et sécurisé à nos services médicaux.
-      </p>
+      <footer className="footer">
+        <p>&copy; 2025 Neuro-Santé. Tous droits réservés.</p>
+      </footer>
     </div>
   );
 }

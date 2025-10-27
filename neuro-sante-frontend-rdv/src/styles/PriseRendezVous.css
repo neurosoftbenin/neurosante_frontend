@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #e8fdf5, #f0fdfb);
+}
+
+.rdv-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+.background-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 140px;
+  font-weight: 900;
+  color: rgba(0, 158, 96, 0.04);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.rdv-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  padding: 50px;
+  max-width: 720px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 128, 96, 0.1);
+  animation: fadeInUp 0.6s ease;
+}
+
+.rdv-heading {
+  font-size: 32px;
+  color: #009e60;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.rdv-description {
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.rdv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.rdv-group label {
+  font-weight: 500;
+  color: #007a4d;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.rdv-group input,
+.rdv-group select,
+.rdv-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1.5px solid #b2e5c2;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: #f9fdfb;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rdv-group input:focus,
+.rdv-group select:focus,
+.rdv-group textarea:focus {
+  border-color: #00b377;
+  box-shadow: 0 0 10px rgba(0, 179, 119, 0.2);
+  outline: none;
+}
+
+.rdv-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.rdv-button {
+  padding: 16px;
+  background: linear-gradient(to right, #00b377, #009e60);
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.rdv-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 158, 96, 0.2);
+}
+
+.rdv-confirmation {
+  margin-top: 40px;
+  padding: 30px;
+  background: linear-gradient(to right, #e6f9f0, #f0fff9);
+  border-left: 6px solid #009e60;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 158, 96, 0.1);
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.rdv-checkmark {
+  font-size: 40px;
+  color: #009e60;
+  margin-bottom: 10px;
+}
+
+.rdv-confirmation h2 {
+  font-size: 22px;
+  color: #007a4d;
+  margin-bottom: 10px;
+}
+
+.rdv-confirmation p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.rdv-note {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .rdv-container {
+    padding: 30px 20px;
+  }
+
+  .background-title {
+    font-size: 60px;
+  }
+
+  .rdv-heading {
+    font-size: 24px;
+  }
+
+}
